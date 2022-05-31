@@ -1,0 +1,22 @@
+{
+  "name": "archetypes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbpawlik/archetypes.git"
+  },
+  "author": "james.benjamin.pawlik@gmail.com",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/jbpawlik/archetypes/issues"
+  },
+  "homepage": "https://github.com/jbpawlik/archetypes#readme",
+  "dependencies": {
+    "jest": "^28.1.0"
+  }
+}

@@ -1,8 +1,12 @@
 // Compare individual's traits to master list of traits
 
-const traits = { social: ['solo', 'social'], novelty: ['new', 'familiar'], openness: ['open', 'closed'], aggressiveness: ['aggressive', 'passive']};
+const traits = { social: ['solo', 'social'], novelty: ['novelty', 'nostalgia'], focus: ['outward', 'inward'], conflict: ['active', 'passive'], duty: ['service', 'perfection'], idealism: ['dreamy', 'grounded'] };
 
+const contenders = ['boubaKikki', 'yin-yang']
+
+//Can I add an index key to each object in the array
 function archetypeListing() {
+  this.number = ''
 	this.name = ''
   this.description =''
   this.traits = []
@@ -27,6 +31,9 @@ function generateArchetypeList(object) {
   let array2 = [];
   let array3 = [];
   let array4 = [];
+  let array5 = [];
+  let array6 = [];
+
 
 	let blankArchetype = new archetypeListing();
 
@@ -35,16 +42,17 @@ function generateArchetypeList(object) {
     array2.push(Object.values(object)[1][i])
     array3.push(Object.values(object)[2][i])
     array4.push(Object.values(object)[3][i])
+    array5.push(Object.values(object)[4][i])
+    array6.push(Object.values(object)[5][i])
   }
 
-
-  	let combinedArray = combineObjects([array1, array2, array3, array4])
+  let combinedArray = combineObjects([array1, array2, array3, array4, array5, array6])
 
     combinedArray.forEach(function(element, i) {
+      blankArchetype.number = i + 1;
       blankArchetype.traits = combinedArray[i];
       archetypeList.push({...blankArchetype})
     })
   return archetypeList
 }
-
 console.log(generateArchetypeList(traits))

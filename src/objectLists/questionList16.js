@@ -1,4 +1,4 @@
-export questionList16 = [
+export const questionList16 = [
   {
     number: 1,
     question: 'Do you find yourself doing the same activities over and over?',

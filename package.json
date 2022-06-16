@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/jbpawlik/archetypes#readme",
   "dependencies": {
-    "jest": "^28.1.0"
+    "chalk": "^5.0.1",
+    "jest": "^28.1.0",
+    "nodemon": "^2.0.16",
+    "readline-sync": "^1.4.10",
+    "ttys": "0.0.3"
   }
 }

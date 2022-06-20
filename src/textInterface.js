@@ -8,14 +8,28 @@ import { questionList16 } from './objectLists/questionList16.js'
 let playGame = true
 
 while (playGame) {
-
+  console.log(chalk.magenta(`⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⠾⠛⠋⠉⠉⠉⠉⢙⣿⣶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⠀⢀⣼⠟⠁⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⢠⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⡟⣷⡀⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⣾⢇⣤⣶⣶⣦⣤⣀⠀⠀⠀⠀⠀⠀⠙⠛⠛⠁⢹⣇⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⡀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀⢸⡏⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠀⠀⠀⢠⡿⠁⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⢀⣴⠟⠁⠀⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⠀⣠⣤⡙⠻⢿⣿⣿⣿⣿⣿⣋⣠⣤⡶⠟⢁⣤⡄⠀⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⠀⢿⣿⣿⣷⣤⣈⣉⠉⠛⠛⠉⣉⣠⣤⣾⣿⣿⡟⠀⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⣾⣦⣀⠙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⢋⣠⣴⣷⠀⠀⠀⠀
+  ⠀⠀⠀⠀⢿⣿⣿⣿⣷⣶⣤⣬⣭⣉⣉⣉⣩⣭⣥⣤⣶⣾⣿⣿⣿⡿⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⠙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠛⠛⠛⠛⠛⠛⠋⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀`))
   console.log(chalk.green.bold("\nDiscover Your Archetype\n"));
 
-  const playerName = rs.question("\nWhat is your name? \n");
+  const playerName = rs.question("\nWhat is your name?\n\n");
 
-  console.log(chalk.green(`\nWelcome ${playerName}` + `, answer these questions to receieve an archetype\n`));
+  console.log(chalk.green(`\nWelcome ${playerName}` + `, answer these questions to receive an archetype\n`));
 
-  rs.keyInPause('...');
+  rs.question();
 
   let playerAttributes = []
 
@@ -128,6 +142,8 @@ while (playGame) {
     }
   }
 
+  rs.question()
+
   function areEqual(array1, array2) {
     if (array1.length === array2.length) {
       return array1.every((element, index) => {
@@ -154,11 +170,12 @@ while (playGame) {
   for(let i = 0; i <= 15; i++) {
     let archetypeArray = archetypes16[i].traits
     if (areEqual(archetypeArray, playerArchetype )) {
-      console.log(chalk.green(`\nYour archetype is ${archetypes16[i].name}\n${archetypes16[i].description}`))
+      console.log(chalk.yellow(`\nYour archetype is ${archetypes16[i].name}`))
+      console.log(chalk.cyan(`\n${archetypes16[i].description}`))
     }
   }
 
-  rs.keyInPause('');
+  rs.question();
 
   for(let i = 0; i <= 15; i++) {
     let archetypeArray = archetypes16[i].traits
@@ -168,21 +185,24 @@ while (playGame) {
   }
 
   console.log(chalk.yellow(`\nYou are a kindred spirit to these archetypes:`))
-  console.log(chalk.cyan(`\n${friendArchetypes[0].name}.  ${friendArchetypes[0].description}\n${friendArchetypes[1].name}.  ${friendArchetypes[1].description}\n${friendArchetypes[2].name}.  ${friendArchetypes[2].description}\n${friendArchetypes[3].name}.  ${friendArchetypes[3].description}`))
+  console.log(chalk.cyan(`\n${friendArchetypes[0].name}.  ${friendArchetypes[0].description}\n\n${friendArchetypes[1].name}.  ${friendArchetypes[1].description}\n\n${friendArchetypes[2].name}.  ${friendArchetypes[2].description}\n\n${friendArchetypes[3].name}.  ${friendArchetypes[3].description}`))
 
-  rs.keyInPause('');
+  rs.question();
 
   for(let i = 0; i <= 15; i++) {
     let archetypeArray = archetypes16[i].traits
     if (areEqual(archetypeArray, playerOpposite)) {
-      console.log(chalk.red(`\nYour shadow archetype is ${archetypes16[i].name}\n${archetypes16[i].description}\nThis archetype is the least similar to you, but they may make good friends or even partners.`))
+      console.log(chalk.red(`\nYour shadow archetype is ${archetypes16[i].name}\n\n${archetypes16[i].description}\n\nThis archetype is the least similar to you, but they may make good friends or even partners.`))
     }
   }
 
-  let playAgain = rs.question(`Try again, ${playerName}? `)
+  rs.question()
+
+  let playAgain = rs.question(`\n\nRediscover yourself, ${playerName}? `)
 
   if (playAgain == 'Y' | playAgain == 'y' | playAgain == 'Yes' | playAgain == 'yes') {
     console.log(` \n \n \n `)
+    rs.question()
   } else {
     console.log(chalk.cyanBright('Goodbye!'))
     break

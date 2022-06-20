@@ -7,13 +7,13 @@ export const questionList16 = [
   },
   {
     number: 2,
-    question: 'Do you like to learn a lot of information about one subject?',
+    question: 'Do you spend a lot of time finding out new information about topics of interest?',
     answer: '',
     traits: [ 'social', 'novelty', 'active', 'specific' ]
   },
   {
     number: 3,
-    question: 'Do you like having a person, thing, or place to take care of?',
+    question: 'Do you like having something special to take care of, even if it`s a lot of work?',
     answer: '',
     traits: [ 'solo', 'nostalgia', 'active', 'specific' ]
   },
@@ -25,31 +25,31 @@ export const questionList16 = [
   },
   {
     number: 5,
-    question: 'Is it important that others think you have good taste?',
+    question: 'Is it important that others know you have good taste?',
     answer: '',
     traits: [ 'solo', 'novelty', 'passive', 'specific' ]
   },
   {
     number: 6,
-    question: 'When you find something you like, does it consume all your attention?',
+    question: 'Do you wish you could spend all day doing your new favorite hobby with other fans?',
     answer: '',
     traits: [ 'social', 'novelty', 'passive', 'specific' ]
   },
   {
     number: 7,
-    question: 'Do you like to dive deep into the context behind things?',
+    question: 'Do you like to dive deeply into the context behind things?',
     answer: '',
     traits: [ 'solo', 'nostalgia', 'passive', 'specific' ]
   },
   {
     number: 8,
-    question: 'Do you help keep your friends, family, or work community together?',
+    question: 'Do you help keep your friends, family, and others happy and healthy?',
     answer: '',
     traits: [ 'social', 'nostalgia', 'passive', 'specific' ]
   },
   {
     number: 9,
-    question: 'Do you like to make real or mental lists of favorite music, movies, art, etc?',
+    question: 'Do you like to make lists of your favorite art and culture?',
     answer: '',
     traits: [ 'solo', 'novelty', 'active', 'general' ]
   },
@@ -61,7 +61,7 @@ export const questionList16 = [
   },
   {
     number: 11,
-    question: 'Do you like making or doing things in the traditional manner?',
+    question: 'Do you think it is important to learn from your elders and pass that wisdom on?',
     answer: '',
     traits: [ 'solo', 'nostalgia', 'active', 'general' ]
   },

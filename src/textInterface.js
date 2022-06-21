@@ -1,9 +1,10 @@
-// importing
 import chalk from 'chalk';
-import nodemon from 'nodemon';
+// import nodemon from 'nodemon';
 import rs from 'readline-sync';
 import { archetypes16 } from './objectLists/archetypes16.js';
 import { questionList16 } from './objectLists/questionList16.js'
+import areEqual from './functions/areEqual.js'
+import haveMatches from './functions/haveMatches.js';
 
 let playGame = true
 
@@ -144,26 +145,7 @@ while (playGame) {
 
   rs.question()
 
-  function areEqual(array1, array2) {
-    if (array1.length === array2.length) {
-      return array1.every((element, index) => {
-        if (element === array2[index]) {
-          return true;
-        }
-        return false;
-      });
-    }
-    return false;
-  }
-
-  function haveMatches(array1, array2) {
-    let counter = 0
-    array1.forEach(function(element) {
-      if (array2.includes(element))
-      counter ++;
-    })
-    return counter
-  }
+  
 
   let friendArchetypes = []
 

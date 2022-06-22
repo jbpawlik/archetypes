@@ -1,0 +1,29 @@
+<!doctype html>
+  <html>
+    <head>
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+      <link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"/>
+    </head>
+    <body>
+      <script>
+        $('body').terminal({
+        hello: function(what) {
+        this.echo('Hello, ' + what +
+        '. Wellcome to this terminal.');
+      }
+    }, {
+      greetings: `Baby's First Terminal`,
+      height: '100%',
+      width: '100%',
+      prompt: 'Hello '
+    });
+  </script>
+  <div id="terminal"></div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+  <script src="../node_modules/jquery.terminal/js/jquery.terminal.js"></script>
+  <link href="../node_modules/jquery.terminal/css/jquery.terminal.css"/>
+  <script src="https://unpkg.com/js-polyfills/keyboard.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/jcubic/static/js/wcwidth.js"></script>
+</body>
+</html>

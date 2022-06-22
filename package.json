@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node build/index_bundle.js && webpack-dev-server --open --mode development",
-    "build": "webpack --mode development",
+    "start": "npm run build ",
+    "build": "browserify ./src/index.mjs -o ./src/bundle.js -t [ babelify --presets [ @babel/preset-env ] --plugins [ ] ]",
     "test": "jest --coverage"
   },
   "repository": {
@@ -19,25 +20,18 @@
   },
   "homepage": "https://github.com/jbpawlik/archetypes#readme",
   "dependencies": {
-    "backbone": "^1.4.1",
-    "backbone-localstorage": "^0.3.2",
+    "babelify": "^10.0.0",
     "chalk": "^5.0.1",
-    "css-loader": "^6.7.1",
-    "html-webpack-plugin": "^5.5.0",
+    "esm": "^3.2.25",
     "jest": "^28.1.0",
     "jquery": "^3.6.0",
+    "jquery.terminal": "^2.33.3",
     "nodemon": "^2.0.16",
     "readline-sync": "^1.4.10",
-    "ttys": "0.0.3",
-    "underscore": "^1.13.4",
-    "webpack-dev-server": "^4.9.2"
+    "ttys": "0.0.3"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.18.2",
-    "csv-loader": "^3.0.3",
-    "eslint": "^8.18.0",
-    "webpack": "^5.73.0",
-    "webpack-cli": "^4.10.0",
-    "xml-loader": "^1.2.1"
+    "eslint": "^8.18.0"
   }
 }

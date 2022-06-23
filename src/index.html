@@ -1,25 +1,75 @@
 <!doctype html>
-  <html>
+  <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
       <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
-      <link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"/>
-    </head>
-    <body>
-      <script>
-        $('body').terminal({
-        hello: function(what) {
-        this.echo('Hello, ' + what +
-        '. Wellcome to this terminal.');
-      }
-    }, {
-      greetings: `Baby's First Terminal`,
-      height: '100%',
-      width: '100%',
-      prompt: 'Hello '
-    });
-  </script>
-  <div id="terminal"></div>
+      <link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.css"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="../node_modules/xterm/css/xterm.css" />
+      <link rel="stylesheet" href="./css/archetypes.css" />
+      <script src="../node_modules/xterm/lib/xterm.js"></script>
+  </head>
+  <body>
+    <div class="wrapper1">
+      <div id="terminal1">
+        </div>
+    </div>
+    <div class="wrapper2">
+      <div id="terminal2">
+        </div>
+    </div>
+    <div>
+    <script>
+      let term = new Terminal();
+      term.open(document.getElementById('terminal1'));
+      term.write('Hello from \x1B[1;3;31mxterm.js\x1B[0m $ ')
+    </script>
+    </div>
+        <!-- <script src="./textInterface.js"></script> -->
+  <script>
+ 
+$(function() {
+  $('#terminal2').terminal({
+    textInterface() {
+      document.write(`<script src="script.js" type="text/javascript" />`)
+    }
+  }, {
+      prompt: '',
+      echoCommand: false,
+      greetings: `
+░█████╗░██████╗░░█████╗░██╗░░██╗███████╗████████╗██╗░░░██╗██████╗░███████╗░██████╗
+██╔══██╗██╔══██╗██╔══██╗██║░░██║██╔════╝╚══██╔══╝╚██╗░██╔╝██╔══██╗██╔════╝██╔════╝
+███████║██████╔╝██║░░╚═╝███████║█████╗░░░░░██║░░░░╚████╔╝░██████╔╝█████╗░░╚█████╗░
+██╔══██║██╔══██╗██║░░██╗██╔══██║██╔══╝░░░░░██║░░░░░╚██╔╝░░██╔═══╝░██╔══╝░░░╚═══██╗
+██║░░██║██║░░██║╚█████╔╝██║░░██║███████╗░░░██║░░░░░░██║░░░██║░░░░░███████╗██████╔╝
+╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚══════╝░░░╚═╝░░░░░░╚═╝░░░╚═╝░░░░░╚══════╝╚═════╝░⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⠾⠛⠋⠉⠉⠉⠉⢙⣿⣶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⠀⢀⣼⠟⠁⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⢠⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⡟⣷⡀⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⣾⢇⣤⣶⣶⣦⣤⣀⠀⠀⠀⠀⠀⠀⠙⠛⠛⠁⢹⣇⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⡀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀⢸⡏⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠀⠀⠀⢠⡿⠁⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⢀⣴⠟⠁⠀⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⠀⣠⣤⡙⠻⢿⣿⣿⣿⣿⣿⣋⣠⣤⡶⠟⢁⣤⡄⠀⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⠀⢿⣿⣿⣷⣤⣈⣉⠉⠛⠛⠉⣉⣠⣤⣾⣿⣿⡟⠀⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⣾⣦⣀⠙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⢋⣠⣴⣷⠀⠀⠀⠀
+  ⠀⠀⠀⠀⢿⣿⣿⣿⣷⣶⣤⣬⣭⣉⣉⣉⣩⣭⣥⣤⣶⣾⣿⣿⣿⡿⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⠙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⠀⠀⠀⠀⠀
+  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠛⠛⠛⠛⠛⠛⠋⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀`,
+    keypress: function(e, term) {
+      term.echo('[[textInterface]]')
+      // term.insert(String.fromCharCode(e.which).toUpperCase());
+      return false;
+    },
+
+  })
+});
+</script>
+
   <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
   <script src="../node_modules/jquery.terminal/js/jquery.terminal.js"></script>
   <link href="../node_modules/jquery.terminal/css/jquery.terminal.css"/>
